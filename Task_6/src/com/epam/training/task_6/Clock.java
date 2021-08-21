@@ -23,7 +23,7 @@ public class Clock {
 	}
 
 	public String getTSring() {
-		Pattern patt = Pattern.compile("Local");
+		Pattern patt = Pattern.compile("time");
 		long w = locT;
 		locT = 0;
 		Matcher m = patt.matcher(toString());
@@ -110,7 +110,7 @@ public class Clock {
 		h = (int) (t / 3600);
 		m = (int) (t % (3600) / 60);
 		s = (int) t % 60;
-		return "Local time is : " + h + "h " + m + "m " + s + "s";
+		return "time " + h + "h " + m + "m " + s + "s";
 	}
 
 	public long getLocT() {

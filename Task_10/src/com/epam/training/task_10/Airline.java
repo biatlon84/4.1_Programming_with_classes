@@ -60,8 +60,8 @@ public class Airline implements Comparable<Airline> {
 
 	@Override
 	public String toString() {
-		return "Flight[Number=" + flightNumber + ", destination=" + destination + ", type=" + type + ", time=" + time
-				+ ", dayOfWeek=" + dayOfWeek + "]";
+		return "Flight to " + destination + ", airplane=" + type + ", " + time + ", " + dayOfWeek + " Number="
+				+ flightNumber;
 	}
 
 	@Override

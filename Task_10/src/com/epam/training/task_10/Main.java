@@ -20,10 +20,12 @@ public class Main {
 		int ti;
 		Scann sc = new Scann();
 		while (true) {
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println("Enter 1 a list of flights for a given destination");
 			System.out.println("Enter 2 a list of flights for a given day of the week");
 			System.out.println(
 					"Enter 3 a list of flights for a given day of the week, the departure time for which is greater than the given one");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			ti = sc.s(4);
 			if (ti == 1) {
 				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -40,21 +42,22 @@ public class Main {
 					c.printDestin(sc.s(e + 1));
 				}
 			} else if (ti == 3) {
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-				System.out.println(
-						"Enter 1 the day of the week, the departure time for which is greater than the given one");
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+				System.out.println("Enter the day of the week");
 				Clock time = new Clock(0, 0);
+				for (int i = 1; i <= 7; i++) {
+					System.out.println(i + " " + DayOfWeek.of(i));
+				}
 				e = sc.s(8);
+				System.out.println("Selected - " + DayOfWeek.of(e));
 				System.out.println("Enter hours");
 				time.setTHoursL(sc.s(24));
 				System.out.println("Enter minunes");
 				time.setTMinutes(sc.s(60));
+				System.out.println(time);
 				c.printWeekT(DayOfWeek.of(e), time);
 			} else if (ti == 2) {
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+				;
 				System.out.println("Enter the day of the week");
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 				for (int i = 1; i <= 7; i++) {
 					System.out.println(i + " " + DayOfWeek.of(i));
 				}

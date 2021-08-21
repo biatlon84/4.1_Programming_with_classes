@@ -36,17 +36,17 @@ public class AirlineCompany {
 	}
 
 	public void print() {
-		Sorter.sortw(a);
+		Sorter.sort(a, new ComparatorTime());
 		for (int i = 0; i < a.length; i++) {
 			System.out.println(a[i]);
 		}
 	}
 
 	public void printDestin(String s) {
-		Sorter.sortw(a);
+		Sorter.sort(a, new ComparatorTime());
 		for (int i = 0; i < a.length; i++) {
 			if (s.equalsIgnoreCase(a[i].getDestination())) {
-				System.out.println(a[i].getDestination());
+				System.out.println(a[i]);
 			}
 		}
 	}
@@ -54,10 +54,11 @@ public class AirlineCompany {
 	public int printDestin() {
 		int coun = 0;
 		HashSet<String> set = new HashSet<String>();
-		Sorter.sortw(a);
+		Sorter.sort(a, new ComparatorTime());
+		;
 		for (int i = 0; i < a.length; i++) {
 			if (set.add(a[i].getDestination())) {
-				System.out.println((i + 1) + " " + a[i].getDestination());
+				System.out.println((i + 1) + " " + a[i].getDestination() + " " + a[i].getTime());
 				coun++;
 			}
 		}
@@ -83,7 +84,7 @@ public class AirlineCompany {
 		Sorter.sort(a, new ComparatorTime());
 		for (int i = 0; i < a.length; i++) {
 			if (d.equals(a[i].getDayOfWeek()) && (tim.getT() < a[i].getTime().getT())) {
-				System.out.println(a[i].getTime() + " " + a[i].getDayOfWeek() + " " + a[i].getDestination());
+				System.out.println(a[i]);
 			}
 		}
 	}
@@ -92,7 +93,7 @@ public class AirlineCompany {
 		Sorter.sort(a, new ComparatorTime());
 		for (int i = 0; i < a.length; i++) {
 			if (d.equals(a[i].getDayOfWeek())) {
-				System.out.println(a[i].getTime() + " " + a[i].getDayOfWeek() + " " + a[i].getDestination());
+				System.out.println(a[i]);
 			}
 		}
 	}
